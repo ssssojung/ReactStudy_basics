@@ -1,8 +1,13 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import { FreeMode, Pagination } from "swiper";
+
 import portfolio from '../json/portfolio.json';
-import shopitem from '../json/item.json';
 function Portfolioin(props) {
-    // const iteminfo = shopitem[1].shop[0].diffuser;
+    const itemimg = portfolio[props.portfolioId].img;
 
     return (
         <div id={props.portfolioId} 
@@ -14,11 +19,29 @@ function Portfolioin(props) {
             <p className='text-center'>
                 {portfolio[props.portfolioId].title}
             </p>
-            <ul >
-               <li>
-                <img src={portfolio[props.portfolioId].img} alt="" />
-               </li>
-            </ul>
+
+<Swiper
+                slidesPerView={3}
+                spaceBetween={30}
+                freeMode={true}
+                modules={[FreeMode]}
+                className="mySwiper d-flex align-items-center"
+                
+                >
+
+            {
+                itemimg.map((v, i) =>{
+                    return(
+                        <SwiperSlide key={'shop'+i}>
+                            <img src={v} alt="" />
+                        </SwiperSlide>
+                    )
+                })
+            }
+            
+                </Swiper> 
+
+         
 
         </div>
     );
