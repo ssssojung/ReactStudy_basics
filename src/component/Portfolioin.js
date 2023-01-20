@@ -32,7 +32,7 @@ function Portfolioin(props) {
                         <img src={itemimg[4]} className='col-4 pe-3 pt-3' style={{width: "324px"}}alt="" />
                     </div>
                 </div>
-                <div  className='col-3'>
+                <div  className='col-3 d-flex align-items-stretch'>
                     <img src={itemimg[5]} style={{width:"300px",height:"608px"}}alt="" />
                 </div>
             </div>

@@ -7,6 +7,7 @@ function Portfolio(props) {
     const btnupdate = (e) => {
         
         const newworknm =  e.target.getAttribute('datasrc').split(','); 
+        //array를 string으로 .split//string을 array로 .join
         //e.target.getAttribute('datasrc') -> array 데이터로 인식 못함 / '리액트,reactid'
         //,를 기준으로 정렬로 데이터타입변환하는 메서드 split
         //dataset 메서드     
@@ -23,7 +24,6 @@ function Portfolio(props) {
             <button onClick={ btnupdate } datasrc={['Design 피그마','figmaid']}>Design 피그마</button>
          </div>
          <Portfolioin shopitem='shop' dbobjkey={worknm[0]} portfolioId={worknm[1]}></Portfolioin>
-                 {console.log(worknm[1])} 
         </div>
     );
 }
